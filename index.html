@@ -152,7 +152,7 @@
             border-color: var(--color-gold-hover);
         }
 
-        /* ================= Seção Hero Principal ================= */
+        /* ================= Secção Hero Principal ================= */
         .hero-container {
             display: flex;
             align-items: center;
@@ -1669,7 +1669,7 @@
                 <p>Quando fala connosco, fala com contabilistas e gestores que vão continuar o seu trabalho — não com um
                     fundo de investimento nem com um corretor.</p>
                 <div class="logos-partnership">
-                    <div class="logo-box"><img src="https://via.placeholder.com/150x60/0b172a/ffffff?text=Legisconta"
+                    <div class="logo-box"><img src="https://placehold.co/150x60/0b172a/ffffff?text=Legisconta"
                             alt="Logo Legisconta"></div>
                     <div class="plus-icon">+</div>
                     <div class="logo-box"><img
@@ -1890,7 +1890,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
             // 1. FAQ Accordion 
             const faqItems = document.querySelectorAll('.faq-item');
@@ -1909,20 +1909,23 @@
             // 2. Setup GSAP ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
 
-            // 3. Hero Animation (On Load)
+            // 3. Hero Animation (On Load) - Mantido como .from porque carrega antes do scroll
             gsap.from("header", { y: -30, opacity: 0, duration: 1, ease: "power3.out" });
             gsap.from(".hero-content > *", { y: 30, opacity: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.2 });
             gsap.from(".hero-card-wrapper", { x: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 });
 
-            // 4. Section Headers Fade Up
+            // 4. Section Headers Fade Up - CORRIGIDO PARA fromTo
             gsap.utils.toArray('.section-header').forEach(header => {
-                gsap.from(header.children, {
-                    scrollTrigger: { trigger: header, start: "top 85%" },
-                    y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out"
-                });
+                gsap.fromTo(header.children, 
+                    { y: 30, opacity: 0 },
+                    {
+                        scrollTrigger: { trigger: header, start: "top 85%" },
+                        y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out"
+                    }
+                );
             });
 
-            // 5. Staggered Animations for Grids/Cards
+            // 5. Staggered Animations for Grids/Cards - CORRIGIDO PARA fromTo
             const staggers = [
                 { container: '.stats-grid', items: '.liquid-glass' },
                 { container: '.cards-grid', items: '.animated-card' },
@@ -1936,18 +1939,24 @@
             staggers.forEach(({ container, items }) => {
                 const el = document.querySelector(container);
                 if (el) {
-                    gsap.from(el.querySelectorAll(items), {
-                        scrollTrigger: { trigger: el, start: "top 85%" },
-                        y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power3.out"
-                    });
+                    gsap.fromTo(el.querySelectorAll(items), 
+                        { y: 40, opacity: 0 },
+                        {
+                            scrollTrigger: { trigger: el, start: "top 85%" },
+                            y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out"
+                        }
+                    );
                 }
             });
 
-            // 6. Form Embed Wrapper Fade In
-            gsap.from(".form-embed-wrapper", {
-                scrollTrigger: { trigger: ".form-section", start: "top 70%" },
-                x: 40, opacity: 0, duration: 1, ease: "power3.out"
-            });
+            // 6. Form Embed Wrapper Fade In - CORRIGIDO PARA fromTo
+            gsap.fromTo(".form-embed-wrapper", 
+                { x: 40, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: ".form-section", start: "top 70%" },
+                    x: 0, opacity: 1, duration: 1, ease: "power3.out"
+                }
+            );
 
             // 7. Timeline Scrub Animation & Item Fade
             gsap.to('#timeline-progress', {
@@ -1961,13 +1970,16 @@
                 ease: "none"
             });
 
+            // Timeline Items - CORRIGIDO PARA fromTo
             gsap.utils.toArray('.timeline-item').forEach(item => {
-                gsap.from(item, {
-                    scrollTrigger: { trigger: item, start: "top 80%" },
-                    opacity: 0, y: 30, duration: 0.8, ease: "power3.out"
-                });
+                gsap.fromTo(item, 
+                    { opacity: 0, y: 30 },
+                    {
+                        scrollTrigger: { trigger: item, start: "top 80%" },
+                        opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+                    }
+                );
 
-                // Ativar o CSS do "Círculo Dourado"
                 ScrollTrigger.create({
                     trigger: item,
                     start: "top 70%",
@@ -1975,18 +1987,24 @@
                 });
             });
 
-            // 8. Final CTA & Footer Fade
-            gsap.from(".final-cta", {
-                scrollTrigger: { trigger: ".final-cta", start: "top 90%" },
-                y: 30, opacity: 0, duration: 0.8, ease: "power3.out"
-            });
+            // 8. Final CTA & Footer Fade - CORRIGIDO PARA fromTo
+            gsap.fromTo(".final-cta", 
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: ".final-cta", start: "top 90%" },
+                    y: 0, opacity: 1, duration: 0.8, ease: "power3.out"
+                }
+            );
 
-            gsap.from(".footer-grid > div", {
-                scrollTrigger: { trigger: ".site-footer", start: "top 95%" },
-                y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out"
-            });
+            gsap.fromTo(".footer-grid > div", 
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: ".site-footer", start: "top 95%" },
+                    y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out"
+                }
+            );
 
-            // 9. Contadores Animados (Ligados ao GSAP ScrollTrigger agora)
+            // 9. Contadores Animados (Mantido inalterado)
             const counters = document.querySelectorAll(".counter");
             counters.forEach(counter => {
                 ScrollTrigger.create({
@@ -2016,6 +2034,23 @@
                 });
             });
 
+            // 10. Recalcular quando as fontes web terminarem de carregar
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => ScrollTrigger.refresh());
+            }
+
+        });
+
+        // Mensagem do Hubspot
+        window.addEventListener("message", (event) => {
+            if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormReady") {
+                ScrollTrigger.refresh();
+            }
+        });
+
+        // Carregamento de janela
+        window.addEventListener("load", () => {
+            ScrollTrigger.refresh();
         });
     </script>
 
