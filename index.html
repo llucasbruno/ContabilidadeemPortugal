@@ -13,8 +13,10 @@
     <style>
         /* ================= Reset e Paleta de Cores ================= */
         :root {
-            --color-gold: #dfbf6a;
-            --color-gold-hover: #a18432;
+            /* Nova Identidade Visual - Azul */
+            --color-primary: #08509E;
+            --color-primary-hover: #053b75;
+            
             --color-dark-blue: #0b172a;
             --color-white: #ffffff;
             --color-gray: #b4bcc8;
@@ -130,27 +132,27 @@
         }
 
         .btn-primary {
-            background-color: var(--color-gold);
-            color: var(--color-dark-blue);
-            border: 1px solid var(--color-gold);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: 1px solid var(--color-primary);
         }
 
         .btn-primary:hover {
-            background-color: var(--color-gold-hover);
-            border-color: var(--color-gold-hover);
+            background-color: var(--color-primary-hover);
+            border-color: var(--color-primary-hover);
             transform: translateY(-2px);
         }
 
         .btn-outline {
             background-color: transparent;
-            color: var(--color-gold);
-            border: 1px solid var(--color-gold);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
         }
 
         .btn-outline:hover {
-            background-color: rgba(223, 191, 106, 0.1);
-            color: var(--color-gold-hover);
-            border-color: var(--color-gold-hover);
+            background-color: rgba(8, 80, 158, 0.1);
+            color: var(--color-primary-hover);
+            border-color: var(--color-primary-hover);
         }
 
         /* ================= Secção Hero Principal ================= */
@@ -175,7 +177,7 @@
         .subtitle {
             font-size: 14px;
             font-weight: 600;
-            color: var(--color-gold);
+            color: var(--color-primary);
             margin-bottom: 20px;
             display: block;
             letter-spacing: 0.5px;
@@ -234,7 +236,7 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-gold);
+            color: var(--color-primary);
             margin-bottom: 16px;
             display: block;
             font-weight: 600;
@@ -311,11 +313,11 @@
         .stat-number {
             font-size: 64px;
             font-weight: 700;
-            color: var(--color-gold);
+            color: var(--color-primary);
             margin-bottom: 20px;
             line-height: 1;
             letter-spacing: -2px;
-            text-shadow: 0 0 30px rgba(223, 191, 106, 0.3);
+            text-shadow: 0 0 30px rgba(8, 80, 158, 0.3);
             display: flex;
             align-items: baseline;
             justify-content: center;
@@ -368,7 +370,7 @@
         .section-header h2 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--color-gold);
+            color: var(--color-primary);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 16px;
@@ -428,7 +430,7 @@
             mask-composite: xor;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
-            background: conic-gradient(from var(--angle), var(--color-gold), rgba(223, 191, 106, 0.1), var(--color-gold));
+            background: conic-gradient(from var(--angle), var(--color-primary), rgba(8, 80, 158, 0.1), var(--color-primary));
             opacity: 0;
             border-radius: 14px;
             z-index: -1;
@@ -455,7 +457,7 @@
         }
 
         .animated-card .card-content h4 {
-            color: var(--color-gold);
+            color: var(--color-primary);
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -494,7 +496,7 @@
 
         .animated-card .card-img .badge svg {
             width: 16px;
-            fill: var(--color-gold);
+            fill: var(--color-primary);
         }
 
         /* ================= SECÇÃO 4: TIMELINE ================= */
@@ -530,9 +532,9 @@
             left: 30px;
             top: 0;
             width: 2px;
-            background: var(--color-gold);
+            background: var(--color-primary);
             height: 0%;
-            box-shadow: 0 0 10px rgba(223, 191, 106, 0.5);
+            box-shadow: 0 0 10px rgba(8, 80, 158, 0.5);
         }
 
         .timeline-item {
@@ -563,10 +565,10 @@
 
         /* Ativada via GSAP / ScrollTrigger */
         .timeline-item.visible .timeline-node {
-            border-color: var(--color-gold);
-            color: var(--color-gold);
-            background: rgba(223, 191, 106, 0.1);
-            box-shadow: 0 0 20px rgba(223, 191, 106, 0.3);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background: rgba(8, 80, 158, 0.1);
+            box-shadow: 0 0 20px rgba(8, 80, 158, 0.3);
         }
 
         .timeline-item .timeline-content {
@@ -586,7 +588,7 @@
         .timeline-content h4 {
             font-size: 13px;
             font-weight: 700;
-            color: var(--color-gold);
+            color: var(--color-primary);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
@@ -646,7 +648,7 @@
             border-radius: 30px;
             font-size: 11px;
             font-weight: 700;
-            color: var(--color-gold);
+            color: var(--color-primary);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 24px;
@@ -853,7 +855,7 @@
 
         .logo-box:hover {
             background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(223, 191, 106, 0.3);
+            border-color: rgba(8, 80, 158, 0.3);
             transform: translateY(-4px);
         }
 
@@ -864,7 +866,7 @@
 
         .plus-icon {
             font-size: 24px;
-            color: var(--color-gold);
+            color: var(--color-primary);
             font-weight: 300;
         }
 
@@ -889,14 +891,14 @@
 
         .history-card:hover {
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(223, 191, 106, 0.3);
+            border-color: rgba(8, 80, 158, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .history-year {
             font-size: 28px;
             font-weight: 700;
-            color: var(--color-gold);
+            color: var(--color-primary);
             flex-shrink: 0;
             width: 80px;
             letter-spacing: -1px;
@@ -965,7 +967,7 @@
             flex-shrink: 0;
             width: 24px;
             height: 24px;
-            color: var(--color-gold);
+            color: var(--color-primary);
             margin-top: 2px;
         }
 
@@ -1021,7 +1023,7 @@
 
         .faq-item.active {
             background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(223, 191, 106, 0.4);
+            border-color: rgba(8, 80, 158, 0.4);
         }
 
         .faq-question {
@@ -1037,7 +1039,7 @@
         }
 
         .faq-icon {
-            color: var(--color-gold);
+            color: var(--color-primary);
             font-size: 24px;
             font-weight: 300;
             transition: transform 0.3s ease;
@@ -1124,7 +1126,7 @@
         }
 
         .footer-title {
-            color: var(--color-gold);
+            color: var(--color-primary);
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -1168,7 +1170,7 @@
         }
 
         .footer-contact a:hover {
-            color: var(--color-gold);
+            color: var(--color-primary);
         }
 
         .footer-bottom {
@@ -1852,7 +1854,7 @@
             <div class="footer-contact">
                 <div class="footer-title">Contactos</div>
                 <p>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)"
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
@@ -1860,7 +1862,7 @@
                     <a href="mailto:geral@ntwcontabilidade.pt">geral@ntwcontabilidade.pt</a>
                 </p>
                 <p>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)"
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path
                             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
@@ -1869,7 +1871,7 @@
                     <a href="tel:+351225501970">+351 22 550 19 70</a>
                 </p>
                 <p>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)"
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
