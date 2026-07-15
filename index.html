@@ -248,7 +248,7 @@
             margin-bottom: 16px;
             line-height: 1.2;
             letter-spacing: -1px;
-            color: var(--color-white);
+            color: var(--color-primary); /* Nova cor aplicada aqui */
         }
 
         .glass-card p {
@@ -351,9 +351,9 @@
         .is-it-for-you {
             position: relative;
             z-index: 20;
-            background-color: var(--color-white); /* Fundo branco */
+            background-color: var(--color-white);
             padding: 100px 40px;
-            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.05), 0 20px 50px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
+            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.05), 0 20px 50px rgba(0, 0, 0, 0.05);
         }
 
         .is-it-for-you-container {
@@ -392,7 +392,6 @@
             font-weight: 300;
         }
 
-        /* Ajustes específicos de cor para o título e texto desta secção light */
         .is-it-for-you .section-header h3 {
             color: var(--color-dark-blue);
         }
@@ -423,8 +422,8 @@
             display: flex;
             align-items: stretch;
             min-height: 150px;
-            background-color: #f8fafc; /* Fundo cinza claro */
-            border: 1px solid #e2e8f0; /* Borda suave */
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             z-index: 1;
             transition: all 0.3s ease;
@@ -439,7 +438,6 @@
             mask-composite: xor;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
-            /* Degradê mais suave no modo light */
             background: conic-gradient(from var(--angle), var(--color-primary), rgba(8, 80, 158, 0.05), var(--color-primary));
             opacity: 0;
             border-radius: 14px;
@@ -451,7 +449,7 @@
         .animated-card:hover {
             cursor: pointer;
             background-color: var(--color-white);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave no hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .animated-card:hover::before {
@@ -477,7 +475,7 @@
         }
 
         .animated-card .card-content p {
-            color: var(--color-text-muted); /* Texto adaptado para modo claro */
+            color: var(--color-text-muted);
             font-size: 16px;
             line-height: 1.5;
             font-weight: 400;
@@ -500,7 +498,7 @@
             place-items: center;
             width: 32px;
             height: 32px;
-            background-color: var(--color-white); /* Fundo claro na bolinha do ícone */
+            background-color: var(--color-white);
             border-radius: 50%;
             border: 1px solid #e2e8f0;
         }
@@ -635,13 +633,13 @@
             font-weight: 300;
         }
 
-        /* ================= SECÇÃO 5: COMO FUNCIONA (Cards 3D SaaS) ================= */
+        /* ================= SECÇÃO 5: COMO FUNCIONA ================= */
         .how-it-works {
             position: relative;
             z-index: 20;
-            background-color: var(--color-dark-blue);
+            background-color: var(--color-primary); /* Fundo Azul Primário */
             padding: 120px 40px;
-            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
         }
 
         .how-it-works-container {
@@ -663,6 +661,28 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 24px;
+        }
+
+        /* Ajuste do badge específico para o fundo azul */
+        .how-it-works .badge-pill {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--color-white);
+        }
+        
+        .how-it-works .badge-pill svg {
+            fill: none;
+            stroke: var(--color-white);
+        }
+
+        /* Ajuste de contraste dos textos no fundo azul */
+        .how-it-works .section-header p,
+        .how-it-works .saas-step-desc {
+            color: rgba(255, 255, 255, 0.85); 
+        }
+
+        .how-it-works .saas-step-number {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .badge-pill.dark {
@@ -738,6 +758,12 @@
             display: flex;
             flex-direction: column;
             padding: 30px 24px;
+        }
+
+        /* Ajuste do fundo dos cards no fundo azul para mais visibilidade */
+        .how-it-works .b-game-card__cover {
+            background: rgba(255, 255, 255, 0.08); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .b-game-card__cover::after {
@@ -923,7 +949,7 @@
             margin: 0;
         }
 
-        /* ================= SECÇÃO 7: FORMULÁRIO ESTUDO (Fundo Branco) ================= */
+        /* ================= SECÇÃO 7: FORMULÁRIO ESTUDO ================= */
         .form-section {
             position: relative;
             z-index: 20;
@@ -945,7 +971,7 @@
         .form-content h2 {
             font-size: clamp(32px, 3.5vw, 48px);
             font-weight: 600;
-            color: var(--color-dark-blue);
+            color: var(--color-primary); /* Cor atualizada para Azul Primário */
             line-height: 1.1;
             letter-spacing: -1px;
             margin-bottom: 20px;
@@ -1108,8 +1134,8 @@
         .site-footer {
             position: relative;
             z-index: 20;
-            background: #f8fafc; /* Fundo cinza claro / branco */
-            border-top: 1px solid #e2e8f0; /* Borda suave */
+            background: #f8fafc; 
+            border-top: 1px solid #e2e8f0; 
             padding: 80px 40px 40px;
         }
 
@@ -1124,12 +1150,11 @@
         .footer-brand .logo-icon {
             width: 180px;
             margin-bottom: 24px;
-            /* Como o logo original é branco, aplicamos um filtro para torná-lu escuro/azul no fundo claro */
-            filter: brightness(0) invert(8%) sepia(34%) saturate(913%) hue-rotate(183deg) brightness(96%) contrast(93%);
+            /* Filtro de escurecimento foi removido para exibir a cor original da imagem */
         }
 
         .footer-brand p {
-            color: var(--color-text-muted); /* Texto mais escuro */
+            color: var(--color-text-muted); 
             font-size: 15px;
             line-height: 1.6;
             font-weight: 300;
@@ -1154,7 +1179,7 @@
         }
 
         .footer-links a {
-            color: var(--color-text-muted); /* Link adaptado ao light mode */
+            color: var(--color-text-muted); 
             text-decoration: none;
             font-size: 15px;
             transition: color 0.3s ease;
@@ -1165,7 +1190,7 @@
         }
 
         .footer-contact p {
-            color: var(--color-text-muted); /* Texto adaptado ao light mode */
+            color: var(--color-text-muted); 
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 16px;
@@ -1175,7 +1200,7 @@
         }
 
         .footer-contact a {
-            color: var(--color-text-dark); /* Texto escuro para os links de contato */
+            color: var(--color-text-dark); 
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -1188,9 +1213,9 @@
             max-width: 1400px;
             margin: 80px auto 0;
             padding-top: 30px;
-            border-top: 1px solid #e2e8f0; /* Borda divisória clara */
+            border-top: 1px solid #e2e8f0; 
             text-align: center;
-            color: var(--color-text-muted); /* Texto adaptado ao light mode */
+            color: var(--color-text-muted); 
             font-size: 12px;
             line-height: 1.6;
         }
@@ -1452,7 +1477,7 @@
             em Portugal. Referências completas no estudo.</p>
     </section>
 
-    <!-- Secção 3: Isto é para si? (Agora em versão Light) -->
+    <!-- Secção 3: Isto é para si? (Versão Light) -->
     <section class="is-it-for-you" id="para-quem-e">
         <div class="is-it-for-you-container">
             <div class="section-header">
@@ -1848,7 +1873,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <img class="logo-icon"
-                    src="https://ntwpocosdecaldas.com.br/wp-content/uploads/2025/03/ntw-contabilidade-pocos-de-caldas-logo-branca.webp"
+                    src="https://ntwcontabilidadegv.com.br/wp-content/uploads/2022/11/logo-NTW-2.png"
                     alt="NTW Contabilidade Logo">
                 <p>A Excelência em Serviços Contabilísticos e de Apoio à Gestão. Uma casa do Porto desde 1978, com a
                     força de uma rede internacional.</p>
