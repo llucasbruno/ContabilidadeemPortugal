@@ -13,11 +13,11 @@
     <style>
         /* ================= Reset e Paleta de Cores ================= */
         :root {
-            /* Nova Identidade Visual - Azul */
+            /* Identidade Visual - Azul */
             --color-primary: #2080e7;
             --color-primary-hover: #053b75;
             
-            --color-dark-blue: #08509E;
+            --color-dark-blue: #0b172a;
             --color-white: #ffffff;
             --color-gray: #b4bcc8;
             --color-text-dark: #1e293b;
@@ -347,13 +347,13 @@
             line-height: 1.5;
         }
 
-        /* ================= SECÇÃO 3: ISTO É PARA SI? ================= */
+        /* ================= SECÇÃO 3: ISTO É PARA SI? (Versão Light) ================= */
         .is-it-for-you {
             position: relative;
             z-index: 20;
-            background-color: var(--color-dark-blue);
+            background-color: var(--color-white); /* Fundo branco */
             padding: 100px 40px;
-            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5), 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.05), 0 20px 50px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
         }
 
         .is-it-for-you-container {
@@ -392,6 +392,14 @@
             font-weight: 300;
         }
 
+        /* Ajustes específicos de cor para o título e texto desta secção light */
+        .is-it-for-you .section-header h3 {
+            color: var(--color-dark-blue);
+        }
+        .is-it-for-you .section-header p {
+            color: var(--color-text-muted);
+        }
+
         @property --angle {
             syntax: '<angle>';
             initial-value: -90deg;
@@ -415,10 +423,11 @@
             display: flex;
             align-items: stretch;
             min-height: 150px;
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: #f8fafc; /* Fundo cinza claro */
+            border: 1px solid #e2e8f0; /* Borda suave */
             border-radius: 12px;
             z-index: 1;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .animated-card::before {
@@ -430,7 +439,8 @@
             mask-composite: xor;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
-            background: conic-gradient(from var(--angle), var(--color-primary), rgba(8, 80, 158, 0.1), var(--color-primary));
+            /* Degradê mais suave no modo light */
+            background: conic-gradient(from var(--angle), var(--color-primary), rgba(8, 80, 158, 0.05), var(--color-primary));
             opacity: 0;
             border-radius: 14px;
             z-index: -1;
@@ -440,7 +450,8 @@
 
         .animated-card:hover {
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.06);
+            background-color: var(--color-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra suave no hover */
         }
 
         .animated-card:hover::before {
@@ -466,7 +477,7 @@
         }
 
         .animated-card .card-content p {
-            color: var(--color-white);
+            color: var(--color-text-muted); /* Texto adaptado para modo claro */
             font-size: 16px;
             line-height: 1.5;
             font-weight: 400;
@@ -489,9 +500,9 @@
             place-items: center;
             width: 32px;
             height: 32px;
-            background-color: var(--color-dark-blue);
+            background-color: var(--color-white); /* Fundo claro na bolinha do ícone */
             border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
         .animated-card .card-img .badge svg {
@@ -1093,14 +1104,12 @@
             font-weight: 300;
         }
 
-        /* ================= SECÇÃO 9: FOOTER ================= */
+        /* ================= SECÇÃO 9: FOOTER (Versão Light) ================= */
         .site-footer {
             position: relative;
             z-index: 20;
-            background: linear-gradient(to top, rgba(11, 23, 42, 1) 10%, rgba(11, 23, 42, 0.8) 100%);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #f8fafc; /* Fundo cinza claro / branco */
+            border-top: 1px solid #e2e8f0; /* Borda suave */
             padding: 80px 40px 40px;
         }
 
@@ -1115,10 +1124,12 @@
         .footer-brand .logo-icon {
             width: 180px;
             margin-bottom: 24px;
+            /* Como o logo original é branco, aplicamos um filtro para torná-lu escuro/azul no fundo claro */
+            filter: brightness(0) invert(8%) sepia(34%) saturate(913%) hue-rotate(183deg) brightness(96%) contrast(93%);
         }
 
         .footer-brand p {
-            color: var(--color-gray);
+            color: var(--color-text-muted); /* Texto mais escuro */
             font-size: 15px;
             line-height: 1.6;
             font-weight: 300;
@@ -1143,18 +1154,18 @@
         }
 
         .footer-links a {
-            color: var(--color-gray);
+            color: var(--color-text-muted); /* Link adaptado ao light mode */
             text-decoration: none;
             font-size: 15px;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--color-white);
+            color: var(--color-primary);
         }
 
         .footer-contact p {
-            color: var(--color-gray);
+            color: var(--color-text-muted); /* Texto adaptado ao light mode */
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 16px;
@@ -1164,7 +1175,7 @@
         }
 
         .footer-contact a {
-            color: var(--color-white);
+            color: var(--color-text-dark); /* Texto escuro para os links de contato */
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -1177,9 +1188,9 @@
             max-width: 1400px;
             margin: 80px auto 0;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid #e2e8f0; /* Borda divisória clara */
             text-align: center;
-            color: rgba(180, 188, 200, 0.5);
+            color: var(--color-text-muted); /* Texto adaptado ao light mode */
             font-size: 12px;
             line-height: 1.6;
         }
@@ -1441,7 +1452,7 @@
             em Portugal. Referências completas no estudo.</p>
     </section>
 
-    <!-- Secção 3: Isto é para si? -->
+    <!-- Secção 3: Isto é para si? (Agora em versão Light) -->
     <section class="is-it-for-you" id="para-quem-e">
         <div class="is-it-for-you-container">
             <div class="section-header">
@@ -1762,7 +1773,7 @@
         </div>
     </section>
 
-    <!-- ================= SECÇÃO 8: PERGUNTAS FREQUENTES & CTA (Vídeo Fundo) ================= -->
+    <!-- ================= SECÇÃO 8: PERGUNTAS FREQUENTES & CTA ================= -->
     <section class="faq-section" id="perguntas">
         <div class="section-header">
             <h2>FAQ</h2>
@@ -1832,7 +1843,7 @@
         </div>
     </section>
 
-    <!-- ================= SECÇÃO 9: FOOTER ================= -->
+    <!-- ================= SECÇÃO 9: FOOTER (Versão Light) ================= -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1912,12 +1923,12 @@
             // 2. Setup GSAP ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
 
-            // 3. Hero Animation (On Load) - Mantido como .from porque carrega antes do scroll
+            // 3. Hero Animation
             gsap.from("header", { y: -30, opacity: 0, duration: 1, ease: "power3.out" });
             gsap.from(".hero-content > *", { y: 30, opacity: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.2 });
             gsap.from(".hero-card-wrapper", { x: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.5 });
 
-            // 4. Section Headers Fade Up - CORRIGIDO PARA fromTo
+            // 4. Section Headers Fade Up
             gsap.utils.toArray('.section-header').forEach(header => {
                 gsap.fromTo(header.children, 
                     { y: 30, opacity: 0 },
@@ -1928,7 +1939,7 @@
                 );
             });
 
-            // 5. Staggered Animations for Grids/Cards - CORRIGIDO PARA fromTo
+            // 5. Staggered Animations for Grids/Cards
             const staggers = [
                 { container: '.stats-grid', items: '.liquid-glass' },
                 { container: '.cards-grid', items: '.animated-card' },
@@ -1952,7 +1963,7 @@
                 }
             });
 
-            // 6. Form Embed Wrapper Fade In - CORRIGIDO PARA fromTo
+            // 6. Form Embed Wrapper Fade In
             gsap.fromTo(".form-embed-wrapper", 
                 { x: 40, opacity: 0 },
                 {
@@ -1973,7 +1984,7 @@
                 ease: "none"
             });
 
-            // Timeline Items - CORRIGIDO PARA fromTo
+            // Timeline Items
             gsap.utils.toArray('.timeline-item').forEach(item => {
                 gsap.fromTo(item, 
                     { opacity: 0, y: 30 },
@@ -1990,7 +2001,7 @@
                 });
             });
 
-            // 8. Final CTA & Footer Fade - CORRIGIDO PARA fromTo
+            // 8. Final CTA & Footer Fade
             gsap.fromTo(".final-cta", 
                 { y: 30, opacity: 0 },
                 {
@@ -2007,7 +2018,7 @@
                 }
             );
 
-            // 9. Contadores Animados (Mantido inalterado)
+            // 9. Contadores Animados
             const counters = document.querySelectorAll(".counter");
             counters.forEach(counter => {
                 ScrollTrigger.create({
