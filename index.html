@@ -161,7 +161,7 @@
             max-width: 1400px;
             margin: 0 auto;
             min-height: 100vh;
-            padding: 140px 40px 40px; /* Padding top aumentado por causa do menu branco */
+            padding: 140px 40px 40px;
             gap: 40px;
             position: relative;
             z-index: 10;
@@ -181,6 +181,51 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
+
+        /* Substitua a classe .subtitle.hero-highlight existente por este bloco: */
+.subtitle.hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(32, 128, 231, 0.15);
+    border: 1px solid rgba(32, 128, 231, 0.3);
+    color: #60a5fa;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(32, 128, 231, 0.2);
+    
+    /* Propriedades adicionadas para o efeito de laminação */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Criação do feixe de luz (efeito laminado) */
+.subtitle.hero-highlight::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: laminateShine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Animação do feixe a passar pela tag */
+@keyframes laminateShine {
+    0% { left: -150%; }
+    20% { left: 150%; }
+    100% { left: 150%; } /* A pausa de 80% do tempo garante que o efeito respira e não distrai demasiado */
+}
 
         .hero-content h1 {
             font-size: clamp(60px, 4vw, 56px);
@@ -533,7 +578,6 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* GSAP tratará da altura desta barra via ScrollTrigger scrub */
         .timeline-line-progress {
             position: absolute;
             left: 30px;
@@ -570,7 +614,6 @@
             z-index: 2;
         }
 
-        /* Ativada via GSAP / ScrollTrigger */
         .timeline-item.visible .timeline-node {
             border-color: var(--color-primary);
             color: var(--color-primary);
@@ -880,26 +923,18 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            opacity: 0.6;
-            filter: grayscale(100%);
+            opacity: 0.8; /* Aumentei a opacidade inicial para não ficar muito escuro */
             transition: all 0.4s ease;
         }
 
         .logo-box:hover {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(234, 239, 240, 0.932);
             border-color: rgba(8, 80, 158, 0.3);
             transform: translateY(-4px);
         }
 
         .logo-box:hover img {
             opacity: 1;
-            filter: grayscale(0%);
-        }
-
-        .plus-icon {
-            font-size: 24px;
-            color: var(--color-primary);
-            font-weight: 300;
         }
 
         .history-grid {
@@ -1402,7 +1437,7 @@
     <!-- Cabeçalho -->
     <header>
         <div class="logo"><img class="logo-icon"
-                src="https://ntwcontabilidadegv.com.br/wp-content/uploads/2022/11/logo-NTW-2.png"
+                src="http://lp.ntwcontabilidade.com.br/wp-content/uploads/2026/07/Logo-NTW-1.png"
                 alt="NTW Contabilidade Logo"></div>
         <nav>
             <ul>
@@ -1419,7 +1454,7 @@
     <!-- Secção 1: Hero -->
     <main class="hero-container">
         <div class="hero-content">
-            <span class="subtitle">Programa Legado NTW · Sucessão e Continuidade</span>
+            <span class="subtitle hero-highlight">Programa Legado NTW · Sucessão e Continuidade</span>
             <h1>Dedicou décadas ao seu gabinete.<br>Nós ajudamos a garantir a sua continuidade ao seu ritmo.</h1>
             <p>Um programa criado para contabilistas certificados que começam a pensar no futuro do seu gabinete:
                 aliviar a operação, associar-se a uma rede sólida ou preparar a sucessão com um rendimento de
@@ -1702,12 +1737,9 @@
                 <p>Quando fala connosco, fala com contabilistas e gestores que vão continuar o seu trabalho não com um
                     fundo de investimento nem com um corretor.</p>
                 <div class="logos-partnership">
-                    <div class="logo-box"><img src="https://placehold.co/150x60/0b172a/ffffff?text=Legisconta"
-                            alt="Logo Legisconta"></div>
-                    <div class="plus-icon">+</div>
-                    <div class="logo-box"><img
-                            src="https://ntwpocosdecaldas.com.br/wp-content/uploads/2025/03/ntw-contabilidade-pocos-de-caldas-logo-branca.webp"
-                            alt="Logo NTW"></div>
+                    <div class="logo-box">
+                        <img src="http://lp.ntwcontabilidade.com.br/wp-content/uploads/2026/07/Logo-NTW-1.png" alt="Logo NTW">
+                    </div>
                 </div>
             </div>
             <div class="history-grid">
@@ -1867,7 +1899,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <img class="logo-icon"
-                    src="https://ntwcontabilidadegv.com.br/wp-content/uploads/2022/11/logo-NTW-2.png"
+                    src="http://lp.ntwcontabilidade.com.br/wp-content/uploads/2026/07/Logo-NTW-1.png"
                     alt="NTW Contabilidade Logo">
                 <p>A Excelência em Serviços Contabilísticos e de Apoio à Gestão. Uma casa do Porto desde 1978, com a
                     força de uma rede internacional.</p>
@@ -1987,7 +2019,7 @@
                 { x: 40, opacity: 0 },
                 {
                     scrollTrigger: { trigger: ".form-section", start: "top 70%" },
-                    x: 0, opacity: 1, duration: 1, ease: "power3.out"
+                    y: 0, opacity: 1, duration: 1, ease: "power3.out"
                 }
             );
 
